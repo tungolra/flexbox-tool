@@ -1,0 +1,56 @@
+/* if width is set, then the px of border box & padding is included in rendering;
+does not apply to margin */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  font-family: Helvetica;
+  /* The fr unit is used by CSS Grid to represent a fraction of the available space. 
+  So in our layout, the first column will be 1/5th the width of the window. */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px 1fr 30px;
+  /* specifies width of grid lines */
+  grid-gap: 5px;
+}
+
+nav {
+  display: flex;
+  height: 50px;
+  background-color: #a2cbb6;
+  justify-content: flex-start;
+  align-items: center;
+}
+div {
+  margin: 10px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+nav > div:last-child {
+  margin-left: auto;
+}
+aside {
+  background-color: #a2b4da;
+}
+
+main {
+  background-color: #f3dba8;
+}
+
+footer {
+  background-color: #a2cbb6;
+}
+.flex-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav,
+footer {
+    /* The grid-column CSS property determines which grid lines a grid item starts and ends on. */
+  grid-column: 1 / 3;
+}
